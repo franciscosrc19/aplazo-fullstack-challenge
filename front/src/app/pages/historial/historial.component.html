@@ -1,0 +1,9 @@
+<div class="history-container">
+  <h2>Historial de Préstamos</h2>
+  <ul>
+    <li *ngFor="let loan of loans">
+      <p>Monto: {{ loan.amount | currency }}</p>
+      <p>Fecha: {{ loan.createdAt | date }}</p>
+    </li>
+  </ul>
+</div>

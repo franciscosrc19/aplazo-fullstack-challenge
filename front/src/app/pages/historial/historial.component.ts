@@ -1,8 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LoanService } from '../../services/loan.service';
 
 @Component({
+  selector: 'app-history',
+  templateUrl: './history.component.html',
   standalone: true,
-  selector: 'app-historial',
-  templateUrl: './historial.component.html',
+  styleUrls: ['./history.component.css']
 })
-export class HistorialComponent {}
+export class HistoryComponent implements OnInit {
+  loans: any[] = [];
+
+  constructor(private loanService: LoanService) {}
+
+  ngOnInit() {
+    this.loanService.loans$.subscribe(loans => {
+      this.loans = loans;
+    });
+  }
+}

@@ -3,6 +3,7 @@ export const ROUTE_CONFIG = {
   app: 'apz',
   home: 'home',
   historial: 'historial',
+  personalInfo: 'personal-info',
 } as const;
 
 export type RouteKey = keyof typeof ROUTE_CONFIG;

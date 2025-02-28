@@ -1,0 +1,18 @@
+<div class="personal-info-container">
+  <h2>Información Personal</h2>
+  <form [formGroup]="personalInfoForm" (ngSubmit)="submit()">
+    <label>Nombre(s)</label>
+    <input type="text" formControlName="firstName" placeholder="Ingresa tu nombre(s)" required/>
+
+    <label>Apellido Paterno</label>
+    <input type="text" formControlName="lastName" placeholder="Ingresa tu apellido paterno" required/>
+
+    <label>Apellido Materno</label>
+    <input type="text" formControlName="secondLastName" placeholder="Ingresa tu apellido materno" required/>
+
+    <label>Fecha de Nacimiento</label>
+    <input type="date" formControlName="dateOfBirth" required/>
+
+    <button type="submit" [disabled]="personalInfoForm.invalid">Continuar</button>
+  </form>
+</div>
